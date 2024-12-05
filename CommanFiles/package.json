@@ -1,12 +1,12 @@
 {
   "name": "commanfiles",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "commanfiles for Backend Projects",
+  "main": "server.js",
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Asbaq",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^8.8.3"
+  }
 }
