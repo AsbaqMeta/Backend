@@ -1,20 +1,19 @@
 const mongoose = require('mongoose');
 
-const mongoconnector = async function (uri) {
-    try{
-        await mongoose.connect(uri, {
-            useNewUrlParser: true,
-            useUnifindtopology: true,
-        });
-    return {
-        isConnected: true,
-        message: 'Successfully connected to MongoDB. '
-    };
-    }
-    catch(e){
-        return{
+// MongoDB Connection Function
+const mongoConnector = async (uri) => {
+    try {
+        await mongoose.connect(uri);
+        return {
+            isConnected: true,
+            message: '✅ Successfully connected to MongoDB.',
+        };
+    } catch (error) {
+        return {
             isConnected: false,
-            message: 'DataBase Connection failed. Error: ' + e
+            message: `❌ Database Connection failed. Error: ${error.message}`,
         };
     }
 };
+
+module.exports = mongoConnector;

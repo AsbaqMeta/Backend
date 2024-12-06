@@ -1,5 +1,5 @@
 {
-  "name": "commanfiles",
+  "name": "commonfiles",
   "version": "1.0.0",
   "description": "commanfiles for Backend Projects",
   "main": "server.js",
@@ -7,7 +7,6 @@
   "author": "Asbaq",
   "license": "ISC",
   "dependencies": {
-    "i": "^0.3.7",
     "mongodb": "^6.11.0",
     "mongoose": "^8.8.4"
   }
