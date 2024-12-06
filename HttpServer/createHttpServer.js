@@ -1,12 +1,18 @@
-const express = require('express');
+// createHttpServer.js
+const http = require('http');
 
-const createHttpServer = function (port) {
-    var app = express();
+const createHttpServer = (port) => {
+    if (typeof port !== 'number') {
+        throw new Error('Invalid port number. Port must be a number.');
+    }
 
-    app.unsubscribe(express.urlencoded({ extended: true }));
+    const server = http.createServer((req, res) => {
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end('Server is running');
+    });
 
-    app.listen(port, () => {
-        console.log('HTTP Server started: Port: ' + port);
+    server.listen(port, () => {
+        console.log(`✅ HTTP Server started on port ${port}`);
     });
 };
 
